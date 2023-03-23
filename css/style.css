@@ -1,4 +1,4 @@
-.center, .center-column, .top, .right, .bottom, .left {
+/* .center, .center-column, .top, .right, .bottom, .left {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -18,4 +18,3 @@
     .desktop {
         display: none;
     } */
-
