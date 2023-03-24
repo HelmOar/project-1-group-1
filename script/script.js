@@ -17,6 +17,22 @@ function getArticData() {
             console.log(searchData(climateData, "year", 1990));
         });
 
+        /*add in catch error at end of above??
+        .catch(err => {
+        console.error(err);
+        });
+
+        }).catch((errorResponse) => {
+        if (errorResponse.text) { //additional error information
+        errorResponse.text().then( errorMessage => {
+        //errorMessage now returns the response body which includes the full error message
+        })
+        } else {
+        //no additional error information 
+        } 
+        });
+        */
+
 
     /*  function yearSelected(selectObject) {
          let articDataSelected = 0;
@@ -30,8 +46,19 @@ function getArticData() {
   */
 }
 
-getArticData();
+/* Another possible option for Function: following extraction of Data from API for use of data in app??
 
+function processClimateDataPerYear(response) {
+  
+  let year=response.resolvedYear;
+  let articData=response.articData;
+  console.log("year: "+year);
+  for (let i=0;i<articData.length;i++) {
+    console.log (articData[i].datetime+": data="+articData[i].property+", articData[i].value);
+  }
+}
+
+getArticData();
 
 /**
  * @param {*} data -> The array to filter on
@@ -77,8 +104,6 @@ function createElement() {
 // query selectors to target the elements
 // create variables 4 factors (polar ice, ocean warming, co2, temp)
 // creat variables for the url(api)(metreic)
-
-
 
 
 
@@ -128,3 +153,4 @@ var getCityWeather = function (city) {
             alert("Unable to retrieve weather data.");
         });
 }; 
+
