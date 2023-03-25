@@ -1,5 +1,11 @@
 var apiUrl = 'https://global-warming.org/api/arctic-api';
 var articDataEl = document.querySelector('#artic-data');
+var articSearchBtn = document.querySelector('#arctic-search');
+var arcticInputEl = document.querySelector('#search-button-3');
+
+// https://global-warning.org/api/co2-api
+// https://global-warning.org/api/ocean-api
+// https://global-warning.org/api/temperature-api
 
 var climateData;
 
@@ -9,12 +15,13 @@ function getArticData() {
             return response.json();
         })
         .then(function (data) {
-            console.log(data);
+            
             climateData = data.arcticData;
-            var arcticYear = document.createElement('h2');
-            arcticYear.textContent = data.arcticData[0].year;
-            console.log(data.arcticData[0].year);
-            console.log(searchData(climateData, "year", 1990));
+            console.log(climateData);
+            // var arcticYear = document.createElement('h2');
+            // arcticYear.textContent = data.arcticData[0].year;
+            // console.log(data.arcticData[0].year);
+            // console.log(searchData(climateData, "year", 1990));
         });
 
 
@@ -31,6 +38,18 @@ function getArticData() {
 }
 
 getArticData();
+
+
+articSearchBtn.addEventListener('click', function () {
+var userYear  = parseInt(arcticInputEl.value);
+
+const filteredData = climateData.filter(val => val.year === userYear)
+articDataEl.textContent = "The area of Arctic Ice was " + filteredData[0].area + " million square kilometres in " + userYear + ".";
+console.log(filteredData[0].area);
+});
+
+
+
 
 
 /**
@@ -57,13 +76,15 @@ function searchData(data, property, value) {
 }
 
 
+
+
 // Call thisd when you want to create an element
 // Maybe look at passing parameters in for the content that gets added
-function createElement() {
+// function createElement() {
     // create title
     // create content
     // etc.
-}
+// }
 
 
 // Tearget the input
@@ -90,41 +111,3 @@ function createElement() {
 // target developers content to use as a base comparison
 // generate data from 'generate' button
 // creates elements and divs within the html to display the data
-
-
-var getCityWeather = function (city) {
-    var apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&APPID=e59b9cf3bb219f49c87ba0bfb16a59e6`;
-
-    fetch(apiUrl)
-        .then(function (response) {
-            return response.json();
-        })
-        .then(function (data) {
-
-            var cityNameEl = document.createElement('h2');
-            cityNameEl.textContent = data.name;
-
-            var weatherIcon = document.createElement("img");
-            weatherIcon.setAttribute("src", `http://openweathermap.org/img/wn/${data.weather[0].icon}.png`);
-
-            var tempEl = document.createElement('p');
-            tempEl.textContent = `Temperature: ${data.main.temp} °C`;
-
-            var humidityEl = document.createElement('p');
-            humidityEl.textContent = `Humidity: ${data.main.humidity}%`;
-
-            var windEl = document.createElement('p');
-            windEl.textContent = `Wind Speed: ${data.wind.speed} m/s`;
-
-            weatherDataContainerEl.innerHTML = ''; // clear previous weather data
-            weatherDataContainerEl.appendChild(cityNameEl);
-            weatherDataContainerEl.appendChild(weatherIcon);
-            weatherDataContainerEl.appendChild(tempEl);
-            weatherDataContainerEl.appendChild(humidityEl);
-            weatherDataContainerEl.appendChild(windEl);
-        })
-        .catch(function (error) {
-            console.error(error);
-            alert("Unable to retrieve weather data.");
-        });
-}; 
