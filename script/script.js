@@ -3,9 +3,14 @@ var articDataEl = document.querySelector('#artic-data');
 var articSearchBtn = document.querySelector('#arctic-search');
 var arcticInputEl = document.querySelector('#search-button-3');
 
-// https://global-warning.org/api/co2-api
-// https://global-warning.org/api/ocean-api
-// https://global-warning.org/api/temperature-api
+var api1Url = 'https://global-warming.org/api/co2-api';
+var co2DataEl = document.querySelector('#co2-data');
+var co2SearchBtn = document.querySelector('#co2-search');
+var co2InputEl = document.querySelector('#search-button-1');
+
+// https://global-warming.org/api/co2-api
+// https://global-warming.org/api/ocean-api
+// https://global-warming.org/api/temperature-api
 
 var climateData;
 
@@ -15,38 +20,55 @@ function getArticData() {
             return response.json();
         })
         .then(function (data) {
-            
-            climateData = data.arcticData;
+
+            climateData = data.arcticData; // this is the specific API reference
             console.log(climateData);
-            // var arcticYear = document.createElement('h2');
-            // arcticYear.textContent = data.arcticData[0].year;
-            // console.log(data.arcticData[0].year);
-            // console.log(searchData(climateData, "year", 1990));
         });
-
-
-    /*  function yearSelected(selectObject) {
-         let articDataSelected = 0;
-         for (let i = 0; i < selectObject.options.length; i++) {
-          if (selectObject.options[i].selected) {
-           numberSelected++;
-          }
-         }
-         return numberSelected;
-        }
-  */
 }
 
 getArticData();
 
 
 articSearchBtn.addEventListener('click', function () {
-var userYear  = parseInt(arcticInputEl.value);
+    var userYear = parseInt(arcticInputEl.value);
 
-const filteredData = climateData.filter(val => val.year === userYear)
-articDataEl.textContent = "The area of Arctic Ice was " + filteredData[0].area + " million square kilometres in " + userYear + ".";
-console.log(filteredData[0].area);
+    const filteredData = climateData.filter(val => val.year === userYear)
+    articDataEl.textContent = "The area of Arctic Ice was " + filteredData[0].area + " million square kilometres in " + userYear + ".";
+    console.log(filteredData[0].area);
 });
+
+var co2Data;
+
+function getCo2Data() {
+    fetch(api1Url)
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+
+            co2Data = data.co2; // this is the specific API reference
+            console.log(co2Data);
+        });
+}
+
+getCo2Data();
+
+
+co2SearchBtn.addEventListener('click', function () {
+    var userYearCo2 = parseInt(co2InputEl.value);
+
+    const filteredData = co2Data.filter(val => val.year === userYearCo2)
+    co2DataEl.textContent = filteredData[0].cycle;
+
+    console.log(filteredData[0].cycle);
+});
+
+
+
+
+
+
+
 
 
 
@@ -111,3 +133,21 @@ function searchData(data, property, value) {
 // target developers content to use as a base comparison
 // generate data from 'generate' button
 // creates elements and divs within the html to display the data
+
+
+
+
+
+
+
+
+
+/*    function yearSelected(selectObject) {
+       let articDataSelected = 0;
+       for (let i = 0; i < selectObject.options.length; i++) {
+        if (selectObject.options[i].selected) {
+         numberSelected++;
+        }
+       }
+       return numberSelected;
+      } */
