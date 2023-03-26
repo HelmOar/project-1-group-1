@@ -8,9 +8,51 @@ var co2DataEl = document.querySelector('#co2-data');
 var co2SearchBtn = document.querySelector('#co2-search');
 var co2InputEl = document.querySelector('#search-button-1');
 
-// https://global-warming.org/api/co2-api
-// https://global-warming.org/api/ocean-api
-// https://global-warming.org/api/temperature-api
+var api4Url = 'https://global-warming.org/api/ocean-warming-api';
+var oceanDataEl = document.querySelector('#ocean-data');
+var oceanSearchBtn = document.querySelector('#ocean-search');
+var oceanInputEl = document.querySelector('#search-button-4');
+
+var api2Url = 'https://global-warming.org/api/temperature-api';
+var tempDataEl = document.querySelector('#temp-data');
+var tempSearchBtn = document.querySelector('#temp-search');
+var tempInputEl = document.querySelector('#search-button-2');
+
+
+var tempData;
+
+function getTempData() {
+    fetch(api2Url)
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+
+            tempData = data.result; // this is the specific API reference- "result"
+            console.log(tempData);
+        });
+}
+
+getTempData();
+
+
+
+var oceanData;
+
+function getOceanData() {
+    fetch(api4Url)
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+
+            oceanData = data.result; // this is the specific API reference- "result"
+            console.log(oceanData);
+        });
+}
+
+getOceanData();
+
 
 var climateData;
 
@@ -21,8 +63,8 @@ function getArticData() {
         })
         .then(function (data) {
 
-            climateData = data.arcticData; // this is the specific API reference
-            console.log(climateData);
+            climateData = data.arcticData; // this is the specific API reference 'articData'
+            // console.log(climateData);
         });
 }
 
@@ -46,8 +88,9 @@ function getCo2Data() {
         })
         .then(function (data) {
 
-            co2Data = data.co2; // this is the specific API reference
+            co2Data = data.co2; // this is the specific API reference 'co2'	
             console.log(co2Data);
+            
         });
 }
 
@@ -58,9 +101,9 @@ co2SearchBtn.addEventListener('click', function () {
     var userYearCo2 = parseInt(co2InputEl.value);
 
     const filteredData = co2Data.filter(val => val.year === userYearCo2)
-    co2DataEl.textContent = filteredData[0].cycle;
+    co2DataEl.textContent = filteredData[0].trend;
 
-    console.log(filteredData[0].cycle);
+    console.log(filteredData[0].trend);
 });
 
 
