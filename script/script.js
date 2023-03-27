@@ -2,21 +2,25 @@ var apiUrl = 'https://global-warming.org/api/arctic-api';
 var articDataEl = document.querySelector('#artic-data');
 var articSearchBtn = document.querySelector('#arctic-search');
 var arcticInputEl = document.querySelector('#search-button-3');
+var arcticHistoryEl = document.querySelector('#history-data-3');
 
 var api1Url = 'https://global-warming.org/api/co2-api';
 var co2DataEl = document.querySelector('#co2-data');
 var co2SearchBtn = document.querySelector('#co2-search');
 var co2InputEl = document.querySelector('#search-button-1');
+var co2HistoryEl = document.querySelector('#history-data-1');
 
 var api4Url = 'https://global-warming.org/api/ocean-warming-api';
 var oceanDataEl = document.querySelector('#ocean-data');
 var oceanSearchBtn = document.querySelector('#search-button-4');
 var oceanInputEl = document.querySelector('#ocean-search');
+var oceanHistoryEl = document.querySelector('#history-data-4');
 
 var api2Url = 'https://global-warming.org/api/temperature-api';
 var tempDataEl = document.querySelector('#temp-data');
 var tempSearchBtn = document.querySelector('#search-button-2');
 var tempInputEl = document.querySelector('#temp-search');
+var tempHistoryEl = document.querySelector('#history-data-2');
 
 
 // ******************** TEMPERATURE DATA SECTION ********************
@@ -40,10 +44,16 @@ tempSearchBtn.addEventListener('click', function () {
     var userYear = parseInt(tempInputEl.value)
     localStorage.setItem("Temp Year Searched", userYear)
 
-    const filteredData = tempData.filter(val => parseInt(val.time) === userYear)
-    tempDataEl.textContent = Math.floor(filteredData[0].time);
-    localStorage.setItem("Temp", filteredData[0].time);
-    console.log(filteredData[0].time)
+    const filteredData = tempData.filter(val => val.time.split(".")[0] == userYear)
+    tempDataEl.textContent = filteredData[0]['land'];
+    localStorage.setItem("Temp", filteredData[0]['land']);
+    console.log(filteredData[0]['land'])
+
+    //get Temp Year Searched from local storage and append to #history-data-2 if it exists
+    var tempYearHistory = localStorage.getItem("Temp Year Searched");
+    tempYearHistory.textContent = tempYearHistory;
+    var tempHistory = localStorage.getItem("Temp");
+    tempHistory.textContent = tempHistory;
 
 })
 
