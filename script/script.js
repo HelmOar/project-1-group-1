@@ -44,8 +44,9 @@ tempSearchBtn.addEventListener('click', function () {
     var userYear = parseInt(tempInputEl.value)
     localStorage.setItem("Temp Year Searched", userYear)
 
+
     const filteredData = tempData.filter(val => val.time.split(".")[0] == userYear)
-    tempDataEl.textContent = filteredData[0]['land'];
+    tempDataEl.textContent = "The global mean surface temperature was " +  Math.floor(filteredData[0].time) + "°C in " + userYear + ".";
     localStorage.setItem("Temp", filteredData[0]['land']);
     console.log(filteredData[0]['land'])
 
@@ -54,6 +55,7 @@ tempSearchBtn.addEventListener('click', function () {
     tempYearHistory.textContent = tempYearHistory;
     var tempHistory = localStorage.getItem("Temp");
     tempHistory.textContent = tempHistory;
+
 
 })
 
@@ -80,7 +82,8 @@ oceanSearchBtn.addEventListener('click', function () {
     var userYear = parseInt(oceanInputEl.value);
     localStorage.setItem("Ocean Year Searched", userYear)
 
-    oceanDataEl.textContent = oceanData[userYear];
+
+oceanDataEl.textContent = "The ocean surface temperature was " + oceanData[userYear] + " °C " + userYear + ".";	
     localStorage.setItem("Ocean Data", oceanData[userYear]);
 
 })
@@ -110,8 +113,12 @@ articSearchBtn.addEventListener('click', function () {
     localStorage.setItem("Arctic Year Searched", userYear)
 
     const filteredData = climateData.filter(val => val.year === userYear)
+
     localStorage.setItem("Area", filteredData[0].area);
-    articDataEl.textContent = "The area of Arctic Ice was " + filteredData[0].area + " million square kilometres in " + userYear + ".";
+
+
+    articDataEl.textContent = "The area of Arctic Ice was " + filteredData[0].area + " million square km in " + userYear + ".";
+
     console.log(filteredData[0].area);
 });
 
@@ -138,7 +145,8 @@ co2SearchBtn.addEventListener('click', function () {
     localStorage.setItem("Co2 Year Searched", userYearCo2);
 
     const filteredData = co2Data.filter(val => parseInt(val.year) === userYearCo2)
-    co2DataEl.textContent = filteredData[0].cycle;
+
+    co2DataEl.textContent = "The fraction of CO2 in the atmosphere was " + filteredData[0].cycle + " in " + userYearCo2 + ".";
     localStorage.setItem("Co2", filteredData[0].cycle);
 
 
@@ -146,6 +154,8 @@ co2SearchBtn.addEventListener('click', function () {
     /*   if (userYearCo2 < 2013) {
           alert("Please choose a year from 2013 onwards")
       }; */
+
+    
 });
 
 
