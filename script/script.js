@@ -94,17 +94,28 @@ function getCo2Data() {
         });
 }
 
+var co2Data;
+function getCo2Data() {
+    fetch(api1Url)
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            co2Data = data.co2; // this is the specific API reference
+            console.log(co2Data);
+        });
+}
 getCo2Data();
-
-
-co2SearchBtn.addEventListener('click', function () {
+//Co2 data from 2013 onwards only*
+co2SearchBtn.addEventListener('click',function () {
     var userYearCo2 = parseInt(co2InputEl.value);
-
-    const filteredData = co2Data.filter(val => val.year === userYearCo2)
-    co2DataEl.textContent = filteredData[0].trend;
-
-    console.log(filteredData[0].trend);
+    const filteredData = co2Data.filter(val => parseInt(val.year) === userYearCo2)
+    co2DataEl.textContent = filteredData[0].cycle;
+    //console.log(filteredData[0].cycle);
+    console.log(filteredData);
+    console.log(userYearCo2,co2Data);
 });
+
 
 
 
