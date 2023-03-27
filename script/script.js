@@ -40,7 +40,7 @@ tempSearchBtn.addEventListener('click', function () {
     var userYear = parseInt(tempInputEl.value)
 
     const filteredData = tempData.filter(val => parseInt(val.time) === userYear)
-    tempDataEl.textContent = "The global mean surface temperature was " +  Math.floor(filteredData[0].time) + "°C in " + userYear + ".";
+    tempDataEl.textContent = "The global mean surface temperature was " + Math.floor(filteredData[0].time) + "°C in " + userYear + ".";
     console.log(filteredData[0].time)
 
 })
@@ -69,7 +69,7 @@ oceanSearchBtn.addEventListener('click', function () {
 
     console.log(oceanData[userYear])
 
-    oceanDataEl.textContent = "The ocean surface temperature was " + oceanData[userYear] + " °C " + userYear + ".";	
+    oceanDataEl.textContent = "The ocean surface temperature was " + oceanData[userYear] + " °C " + userYear + ".";
 
 })
 
