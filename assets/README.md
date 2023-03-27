@@ -1,40 +1,45 @@
 
+GLOBAL WARMING
 
-Description
+#Description
 
-This project was aimed at providing scientific data on markers of climate change. The project featured HTML, CSS, JavaScript and APIs.
+This project targeted scientific data of markers of climate change. The project focused on creating a Global Warming Data Platform, which featured HTML, CSS, JavaScript and server-side APIs. User interaction encompassed searching for key data points, such as CO2 levels - across differing time periods to understand comparative shifts in global warming.
 
-Human activity is the principal cause of Earth Warming at an unprecedented rate - and hard science provides the unequivocal evidence to capture and show alarming changes in our global temperature, arctic ice, CO2 concentration and ocean warming.
+- Human activity is the principal cause of Earth Warming at an unprecedented rate - and hard science provides the unequivocal evidence to capture and show alarming changes in our global temperature, arctic ice, CO2 concentration and ocean warming.
 
-We wanted to explore the scientific facts about global warming to understand at a deeper level what is occurring and if /what is being addressed in regards to solutions.
+- We wanted to explore the scientific facts about global warming to understand at a deeper level what is occurring and if /what is being addressed in regards to solutions.
 
-In addition we are inspired to disseminate the evidence to inform individuals, communities, and governments about the trajectory our planet is on - and what maybe possible.
+- In addition we are inspired to disseminate the evidence to inform individuals, communities, and governments about the trajectory our planet is on - and what maybe possible.
 
-Importantly, we wanted to build an awareness of the immediacy of forging solutions at a systemic level, so we collectively can harness adaptive solutions to reverse global warming. Ultimately we are focused on how we can change out-moded approaches by humans on our interaction with our earth, wildlife and eco-systems.
+- Importantly, we wanted to build an awareness of the immediacy of forging solutions at a systemic level, so we collectively harness adaptive solutions to reverse global warming. Ultimately we are focused on how we can change out-moded approaches by humans on our interaction with our earth, wildlife and eco-systems.
 
-We have developed a comprehensive web application, that incorporates API functionality to deliver to users, specific climate data: accessed across various time periods - that drivers scientific data about key climate markers, and that presents a comparative understanding of climate shifts across specific time points.
+- We have developed a comprehensive web application, that incorporates API functionality to deliver to users, specific climate data, accessed across various time periods - that drives scientific data about key climate markers, and that presents an data of climate shifts across specific time points.
 
-Table of Contents (Optional)
+#Table of Contents (Optional)
 
-If your README is long, add a table of contents to make it easy for users to find what they need.
+(If your README is long, add a table of contents to make it easy for users to find what they need.)
 
-Usage
+#Usage
 
-To use the application, open the links below in your browser to view global warming data.
+To use the application, please open the links below in your browser to view comparative global warming data.
 
 The URL of the GitHub repository:
 https://github.com/HelmOar/project-1-group-1
 
 The URL of the functional, deployed application on GitHub Pages:
 
-TODO The following is a screenshots of our project:
-To add a screenshot, create an assets/images folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
+***TODO The following is a screenshot of our project:
+(To add a screenshot, create an assets/images folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:)
 
-Application directive
+#Application directive
 
-TODO Provide a step-by-step description of how to use the app.
+***TODO Provide a step-by-step description of how to use the app.
+The search feature allows the user to interact with specific years and selected climate markers. 
+The user can then compare across different years in history changes in selected markers.
+The website calls on third-party API to extract information and displays the data on the webpage.
+ Using local storage, past searches can allow a recall of previous data.
 
-Credits
+#Credits
 
 https://global-warming.org
 https://climate.nasa.gov
@@ -49,24 +54,29 @@ Mozilla MDN
 Stackoverflow
 Medium
 
-License
+#License
 
-The last section of a high-quality README file is the license. This lets other developers know what they can and cannot do with your project. If you need help choosing a license, refer to https://choosealicense.com/.
+(The last section of a high-quality README file is the license. This lets other developers know what they can and cannot do with your project. If you need help choosing a license, refer to https://choosealicense.com/.)
 
-Badges
+#Badges
 
 https://img.shields.io/badge/Earth Warriors-ACT NOW-blue
+https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white
+https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=white
 
-Features
+#Features
 
 Access specific years in history to present day - to explore scientific data and understand climate changes across the following :
 CO2 Concentration
 Global Temperature
 Polar Ice
 Ocean Warming
-Links to key sites so to stay informed about global warming and initiatives:
+
+
+#Links to key sites to stay informed about global warming and initiatives:
 https://www.earthwatch.org.au/
 https://www.natureaustralia.org.au/
+https://worldoceanday.org
 https://www.greenfleet.com.au/
 https://climatenetwork.org/
 https://www.unep.org/news-and-stories/press-release/leading-international-organizations-commit-climate-action
@@ -78,7 +88,10 @@ https://www.ipcc.ch/
 https://thalesetd.medium.com/organizations-fighting-climate-change-a-quick-guide-2e700d96dc52
 https://climateoutreach.org/
 https://cotap.org/
-How to Contribute
+
+
+
+#How to Contribute
 
 If you created an application or package and would like other developers to contribute it, you can include guidelines for how to do so. The Contributor Covenant is an industry standard, but you can always write your own if you’d prefer.
 

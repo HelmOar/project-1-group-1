@@ -53,14 +53,18 @@ function getCo2Data() {
 
 getCo2Data();
 
-
+//Co2 data from 2013 onwards only*
 co2SearchBtn.addEventListener('click', function () {
     var userYearCo2 = parseInt(co2InputEl.value);
 
-    const filteredData = co2Data.filter(val => val.year === userYearCo2)
+    const filteredData = co2Data.filter(val => parseInt(val.year) === userYearCo2)
     co2DataEl.textContent = filteredData[0].cycle;
 
-    console.log(filteredData[0].cycle);
+    //console.log(filteredData[0].cycle);
+    console.log(filteredData);
+    console.log(userYearCo2,co2Data);
+
+
 });
 
 
