@@ -40,7 +40,7 @@ tempSearchBtn.addEventListener('click', function () {
     var userYear = parseInt(tempInputEl.value)
 
     const filteredData = tempData.filter(val => parseInt(val.time) === userYear)
-    tempDataEl.textContent = Math.floor(filteredData[0].time);
+    tempDataEl.textContent = "The global mean surface temperature was " +  Math.floor(filteredData[0].time) + "°C in " + userYear + ".";
     console.log(filteredData[0].time)
 
 })
@@ -69,7 +69,7 @@ oceanSearchBtn.addEventListener('click', function () {
 
     console.log(oceanData[userYear])
 
-    oceanDataEl.textContent = oceanData[userYear];
+    oceanDataEl.textContent = "The ocean surface temperature was " + oceanData[userYear] + " °C " + userYear + ".";	
 
 })
 
@@ -97,7 +97,7 @@ articSearchBtn.addEventListener('click', function () {
     var userYear = parseInt(arcticInputEl.value);
 
     const filteredData = climateData.filter(val => val.year === userYear)
-    articDataEl.textContent = "The area of Arctic Ice was " + filteredData[0].area + " million square kilometres in " + userYear + ".";
+    articDataEl.textContent = "The area of Arctic Ice was " + filteredData[0].area + " million square km in " + userYear + ".";
     console.log(filteredData[0].area);
 });
 
@@ -122,14 +122,14 @@ getCo2Data();
 co2SearchBtn.addEventListener('click', function () {
     var userYearCo2 = parseInt(co2InputEl.value);
     const filteredData = co2Data.filter(val => parseInt(val.year) === userYearCo2)
-    co2DataEl.textContent = filteredData[0].cycle;
+    co2DataEl.textContent = "The fraction of CO2 in the atmosphere was " + filteredData[0].cycle + " in " + userYearCo2 + ".";
     //console.log(filteredData[0].cycle);
     console.log(filteredData);
     console.log(userYearCo2, co2Data);
     // create alert if user chooses a year before 2013
-    if (userYearCo2 < 2013) {
-        alert("Please choose a year from 2013 onwards")
-    };
+    // if (userYearCo2 < 2013) {
+    //     alert("Please choose a year from 2013 onwards")
+    // };
 });
 
 
