@@ -3,25 +3,28 @@ var articDataEl = document.querySelector('#artic-data');
 var articSearchBtn = document.querySelector('#arctic-search');
 var arcticInputEl = document.querySelector('#search-button-3');
 var arcticHistoryEl = document.querySelector('#history-data-3');
+var arcticHistory = JSON.parse(localStorage.getItem("arcticHistory")) || [];
 
 var api1Url = 'https://global-warming.org/api/co2-api';
 var co2DataEl = document.querySelector('#co2-data');
 var co2SearchBtn = document.querySelector('#co2-search');
 var co2InputEl = document.querySelector('#search-button-1');
 var co2HistoryEl = document.querySelector('#history-data-1');
+var co2History = JSON.parse(localStorage.getItem("co2History")) || [];
 
 var api4Url = 'https://global-warming.org/api/ocean-warming-api';
 var oceanDataEl = document.querySelector('#ocean-data');
 var oceanSearchBtn = document.querySelector('#search-button-4');
 var oceanInputEl = document.querySelector('#ocean-search');
 var oceanHistoryEl = document.querySelector('#history-data-4');
+var oceanHistory = JSON.parse(localStorage.getItem("oceanHistory")) || [];
 
 var api2Url = 'https://global-warming.org/api/temperature-api';
 var tempDataEl = document.querySelector('#temp-data');
 var tempSearchBtn = document.querySelector('#search-button-2');
 var tempInputEl = document.querySelector('#temp-search');
 var tempHistoryEl = document.querySelector('#history-data-2');
-
+var tempHistory = JSON.parse(localStorage.getItem("tempHistory")) || [];
 
 // ******************** TEMPERATURE DATA SECTION ********************
 var tempData;
@@ -38,24 +41,30 @@ function getTempData() {
         });
 }
 
+
 getTempData();
 
 tempSearchBtn.addEventListener('click', function () {
     var userYear = parseInt(tempInputEl.value)
-    localStorage.setItem("Temp Year Searched", userYear)
 
 
-    const filteredData = tempData.filter(val => val.time.split(".")[0] == userYear)
-    tempDataEl.textContent = "The global mean surface temperature was " +  Math.floor(filteredData[0].time) + "°C in " + userYear + ".";
-    localStorage.setItem("Temp", filteredData[0]['land']);
-    console.log(filteredData[0]['land'])
 
-    //get Temp Year Searched from local storage and append to #history-data-2 if it exists
-    var tempYearHistory = localStorage.getItem("Temp Year Searched");
-    tempYearHistory.textContent = tempYearHistory;
-    var tempHistory = localStorage.getItem("Temp");
-    tempHistory.textContent = tempHistory;
+    const filteredData = tempData.filter(val => val.time.split(".")[0] == userYear);
+    tempDataEl.textContent = "The global mean surface temperature was " + (filteredData[0]['land']) + "°C in " + userYear + ".";
 
+    let test = {
+        year: userYear,
+        temp: filteredData[0]
+    }
+    tempHistory.push(test);
+    localStorage.setItem("tempHistory", JSON.stringify(tempHistory));
+
+    for (let i = 0; i < tempHistory.length; i++) {
+        console.log(tempHistory[i]);
+        var tempYearHistory = document.createElement("p");
+        tempYearHistory.textContent = `The global mean surface temperature was ${tempHistory[i].temp.land} for year ${userYear}`;
+        tempHistoryEl.appendChild(tempYearHistory);
+    }
 
 })
 
@@ -83,14 +92,28 @@ oceanSearchBtn.addEventListener('click', function () {
     localStorage.setItem("Ocean Year Searched", userYear)
 
 
-oceanDataEl.textContent = "The ocean surface temperature was " + oceanData[userYear] + " °C " + userYear + ".";	
-    localStorage.setItem("Ocean Data", oceanData[userYear]);
+    oceanDataEl.textContent = "The ocean surface temperature was " + oceanData[userYear] + " °C " + userYear + ".";
+
+    let ocean = {
+        year: userYear,
+        temp: oceanData[userYear]
+    }
+
+    oceanHistory.push(ocean);
+    localStorage.setItem("oceanHistory", JSON.stringify(oceanHistory));
+
+    for (let i = 0; i < oceanHistory.length; i++) {
+        console.log(oceanHistory[i]);
+        var oceanYearHistory = document.createElement("p");
+        oceanYearHistory.textContent = `The ocean surface temperature was ${oceanHistory[i].temp} for year ${userYear}`;
+        oceanHistoryEl.appendChild(oceanYearHistory);
+    }
 
 })
 
 
 
-// ******************** ARCTICE DATA SECTION ******************
+// ******************** ARCTIC DATA SECTION ******************
 var climateData;
 
 function getArticData() {
@@ -101,7 +124,6 @@ function getArticData() {
         .then(function (data) {
 
             climateData = data.arcticData; // this is the specific API reference 'articData'
-            // console.log(climateData);
         });
 }
 
@@ -110,16 +132,25 @@ getArticData();
 
 articSearchBtn.addEventListener('click', function () {
     var userYear = parseInt(arcticInputEl.value);
-    localStorage.setItem("Arctic Year Searched", userYear)
+
 
     const filteredData = climateData.filter(val => val.year === userYear)
-
-    localStorage.setItem("Area", filteredData[0].area);
-
-
     articDataEl.textContent = "The area of Arctic Ice was " + filteredData[0].area + " million square km in " + userYear + ".";
 
-    console.log(filteredData[0].area);
+    let arctic = {
+        year: userYear,
+        area: filteredData[0].area
+    }
+
+    arcticHistory.push(arctic);
+    localStorage.setItem("arcticHistory", JSON.stringify(arcticHistory));
+
+    for (let i = 0; i < arcticHistory.length; i++) {
+        console.log(arcticHistory[i]);
+        var arcticYearHistory = document.createElement("p");
+        arcticYearHistory.textContent = `The area of Arctic Ice was ${arcticHistory[i].area} million square km for year ${userYear}`;
+        arcticHistoryEl.appendChild(arcticYearHistory);
+    }
 });
 
 
@@ -142,20 +173,25 @@ getCo2Data();
 //Co2 data from 2013 onwards only*
 co2SearchBtn.addEventListener('click', function () {
     var userYearCo2 = parseInt(co2InputEl.value);
-    localStorage.setItem("Co2 Year Searched", userYearCo2);
 
     const filteredData = co2Data.filter(val => parseInt(val.year) === userYearCo2)
 
     co2DataEl.textContent = "The fraction of CO2 in the atmosphere was " + filteredData[0].cycle + " in " + userYearCo2 + ".";
-    localStorage.setItem("Co2", filteredData[0].cycle);
 
+    let co2 = {
+        year: userYearCo2,
+        cycle: filteredData[0].cycle
+    }
 
-    // create alert if user chooses a year before 2013
-    /*   if (userYearCo2 < 2013) {
-          alert("Please choose a year from 2013 onwards")
-      }; */
+    co2History.push(co2);
+    localStorage.setItem("co2History", JSON.stringify(co2History));
 
-    
+    for (let i = 0; i < co2History.length; i++) {
+        console.log(co2History[i]);
+        var co2YearHistory = document.createElement("p");
+        co2YearHistory.textContent = `The fraction of CO2 in the atmosphere was ${co2History[i].cycle} for year ${userYearCo2}`;
+        co2HistoryEl.appendChild(co2YearHistory);
+    }
 });
 
 
