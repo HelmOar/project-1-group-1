@@ -106,26 +106,19 @@ function getCo2Data() {
         });
 }
 getCo2Data();
+let modal = document.getElementById("modal");
 //Co2 data from 2013 onwards only*
 co2SearchBtn.addEventListener('click',function () {
     var userYearCo2 = parseInt(co2InputEl.value);
+    if(userYearco2<2013|| userYearCo2>2023){
+        modal
+    }
     const filteredData = co2Data.filter(val => parseInt(val.year) === userYearCo2)
     co2DataEl.textContent = filteredData[0].cycle;
     //console.log(filteredData[0].cycle);
     console.log(filteredData);
     console.log(userYearCo2,co2Data);
 });
-
-
-
-
-
-
-
-
-
-
-
 
 
 /**

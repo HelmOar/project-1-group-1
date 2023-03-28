@@ -8,15 +8,11 @@ Human activity is the principal cause of Earth Warming at an unprecedented rate 
 
 We wanted to explore the scientific facts about global warming to understand at a deeper level what is occurring and if /what is being addressed in regards to solutions.
 
-In addition we are inspired to disseminate the evidence to inform individuals, communities, and governments about the trajectory our planet is on - and what maybe possible.
+In addition we are inspired to disseminate the evidence to inform individuals, communities, and governments about the trajectory our planet is on - and what maybe possible to address solutions.
 
 Importantly, we wanted to build an awareness of the immediacy of forging solutions at a systemic level, so we collectively can harness adaptive solutions to reverse global warming. Ultimately we are focused on how we can change out-moded approaches by humans on our interaction with our earth, wildlife and eco-systems.
 
-We have developed a comprehensive web application, that incorporates API functionality to deliver to users, specific climate data: accessed across various time periods - that drivers scientific data about key climate markers, and that presents a comparative understanding of climate shifts across specific time points.
-
-Table of Contents (Optional)
-
-If your README is long, add a table of contents to make it easy for users to find what they need.
+We have developed a comprehensive web application, that incorporates API functionality to deliver to users, specific climate data: accessed across various time periods - that drives scientific data about key climate markers, and that presents a comparative understanding of climate shifts across specific time points.
 
 Usage
 
@@ -25,12 +21,13 @@ To use the application, open the links below in your browser to view global warm
 The URL of the GitHub repository:
 https://github.com/HelmOar/project-1-group-1
 
-The URL of the functional, deployed application on GitHub Pages:
+The URL of the functional, deployed application on GitHub Pages: (TODO)
 
-TODO The following is a screenshots of our project:
-To add a screenshot, create an assets/images folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
+TODO :
+The following are screenshots of our project:
+***To add a screenshot, create an assets/images folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
 
-Application directive
+Application directive:
 
 TODO Provide a step-by-step description of how to use the app.
 
@@ -49,7 +46,7 @@ Mozilla MDN
 Stackoverflow
 Medium
 
-License
+License (TODO)
 
 The last section of a high-quality README file is the license. This lets other developers know what they can and cannot do with your project. If you need help choosing a license, refer to https://choosealicense.com/.
 
@@ -80,7 +77,7 @@ https://climateoutreach.org/
 https://cotap.org/
 How to Contribute
 
-If you created an application or package and would like other developers to contribute it, you can include guidelines for how to do so. The Contributor Covenant is an industry standard, but you can always write your own if you’d prefer.
+
 
 Tests
 
