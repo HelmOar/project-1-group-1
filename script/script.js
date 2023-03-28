@@ -4,6 +4,9 @@ var articSearchBtn = document.querySelector('#arctic-search');
 var arcticInputEl = document.querySelector('#search-button-3');
 var arcticHistoryEl = document.querySelector('#history-data-3');
 var arcticHistory = JSON.parse(localStorage.getItem("arcticHistory")) || [];
+var modalEl3 = document.querySelector("#modal-3");
+var modalBg3 = document.querySelector("#modal-bg-3");
+var modalCloseBtn3 = document.querySelector("#modal-close-btn-3");
 
 var api1Url = 'https://global-warming.org/api/co2-api';
 var co2DataEl = document.querySelector('#co2-data');
@@ -11,6 +14,9 @@ var co2SearchBtn = document.querySelector('#co2-search');
 var co2InputEl = document.querySelector('#search-button-1');
 var co2HistoryEl = document.querySelector('#history-data-1');
 var co2History = JSON.parse(localStorage.getItem("co2History")) || [];
+var modalEl1 = document.querySelector("#modal-1");
+var modalBg1 = document.querySelector("#modal-bg-1");
+var modalCloseBtn1 = document.querySelector("#modal-close-btn-1");
 
 var api4Url = 'https://global-warming.org/api/ocean-warming-api';
 var oceanDataEl = document.querySelector('#ocean-data');
@@ -18,6 +24,9 @@ var oceanSearchBtn = document.querySelector('#search-button-4');
 var oceanInputEl = document.querySelector('#ocean-search');
 var oceanHistoryEl = document.querySelector('#history-data-4');
 var oceanHistory = JSON.parse(localStorage.getItem("oceanHistory")) || [];
+var modalEl4 = document.querySelector("#modal-4");
+var modalBg4 = document.querySelector("#modal-bg-4");
+var modalCloseBtn4 = document.querySelector("#modal-close-btn-4");
 
 var api2Url = 'https://global-warming.org/api/temperature-api';
 var tempDataEl = document.querySelector('#temp-data');
@@ -25,6 +34,9 @@ var tempSearchBtn = document.querySelector('#search-button-2');
 var tempInputEl = document.querySelector('#temp-search');
 var tempHistoryEl = document.querySelector('#history-data-2');
 var tempHistory = JSON.parse(localStorage.getItem("tempHistory")) || [];
+var modalEl2 = document.querySelector("#modal-2");
+var modalBg2 = document.querySelector("#modal-bg-2");
+var modalCloseBtn2 = document.querySelector("#modal-close-btn-2");
 
 // ******************** TEMPERATURE DATA SECTION ********************
 var tempData;
@@ -47,7 +59,10 @@ getTempData();
 tempSearchBtn.addEventListener('click', function () {
     var userYear = parseInt(tempInputEl.value)
 
-
+    if (userYear <1880 || userYear >2022) {
+    modalBg2.classList.add("is-active");
+    modalEl2.classList.add("is-active");
+    }
 
     const filteredData = tempData.filter(val => val.time.split(".")[0] == userYear);
     tempDataEl.textContent = "The global mean surface temperature was " + (filteredData[0]['land']) + "°C in " + userYear + ".";
@@ -89,6 +104,12 @@ getOceanData();
 
 oceanSearchBtn.addEventListener('click', function () {
     var userYear = parseInt(oceanInputEl.value);
+
+    if (userYear <1880 || userYear >2022) {
+    modalBg4.classList.add("is-active");
+    modalEl4.classList.add("is-active");
+    }
+
     localStorage.setItem("Ocean Year Searched", userYear)
 
 
@@ -133,6 +154,10 @@ getArticData();
 articSearchBtn.addEventListener('click', function () {
     var userYear = parseInt(arcticInputEl.value);
 
+    if (userYear <1979 || userYear >2022) {
+    modalBg3.classList.add("is-active");
+    modalEl3.classList.add("is-active");
+    }
 
     const filteredData = climateData.filter(val => val.year === userYear)
     articDataEl.textContent = "The area of Arctic Ice was " + filteredData[0].area + " million square km in " + userYear + ".";
@@ -173,7 +198,11 @@ getCo2Data();
 //Co2 data from 2013 onwards only*
 co2SearchBtn.addEventListener('click', function () {
     var userYearCo2 = parseInt(co2InputEl.value);
-
+    
+    if (userYearCo2 <2013 || userYearCo2 >2022) {
+    modalBg1.classList.add("is-active");
+    modalEl1.classList.add("is-active");
+    }
     const filteredData = co2Data.filter(val => parseInt(val.year) === userYearCo2)
 
     co2DataEl.textContent = "The fraction of CO2 in the atmosphere was " + filteredData[0].cycle + " in " + userYearCo2 + ".";
@@ -195,11 +224,27 @@ co2SearchBtn.addEventListener('click', function () {
 });
 
 
+//modal closures
 
+modalCloseBtn1.addEventListener("click", function () {
+    modalEl1.classList.remove("is-active");
+    modalBg1.classList.remove("is-active");
+})
 
+modalCloseBtn2.addEventListener("click", function () {
+    modalEl2.classList.remove("is-active");
+    modalBg2.classList.remove("is-active");
+})
 
+modalCloseBtn3.addEventListener("click", function () {
+    modalEl3.classList.remove("is-active");
+    modalBg3.classList.remove("is-active");
+})
 
-
+modalCloseBtn4.addEventListener("click", function () {
+    modalEl4.classList.remove("is-active");
+    modalBg4.classList.remove("is-active");
+})
 
 
 
