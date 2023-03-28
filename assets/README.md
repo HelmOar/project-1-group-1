@@ -55,7 +55,9 @@ The last section of a high-quality README file is the license. This lets other d
 
 Badges
 
-https://img.shields.io/badge/Earth Warriors-ACT NOW-blue
+![JavaScript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
+
+![Bulma](https://img.shields.io/badge/Bulma-00D1B2?style=for-the-badge&logo=Bulma&logoColor=white)
 
 Features
 
