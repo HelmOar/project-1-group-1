@@ -1,6 +1,6 @@
+###Global Warming Data History
 
-
-Description
+##Description
 
 This project was aimed at providing scientific data on markers of climate change. The project featured HTML, CSS, JavaScript and APIs.
 
@@ -14,77 +14,79 @@ Importantly, we wanted to build an awareness of the immediacy of forging solutio
 
 We have developed a comprehensive web application, that incorporates API functionality to deliver to users, specific climate data: accessed across various time periods - that drivers scientific data about key climate markers, and that presents a comparative understanding of climate shifts across specific time points.
 
-Table of Contents (Optional)
 
-If your README is long, add a table of contents to make it easy for users to find what they need.
+##Usage
 
-Usage
+![screenshot](/assets/images/Global%20Warming%20Data%20History.png)
 
 To use the application, open the links below in your browser to view global warming data.
 
 The URL of the GitHub repository:
+
 https://github.com/HelmOar/project-1-group-1
 
 The URL of the functional, deployed application on GitHub Pages:
 
-TODO The following is a screenshots of our project:
-To add a screenshot, create an assets/images folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
+https://helmoar.github.io/project-1-group-1/
 
-Application directive
 
-TODO Provide a step-by-step description of how to use the app.
 
-Credits
+##Application directive
 
-https://global-warming.org
-https://climate.nasa.gov
-Caroline Helmore
-Toby Carroll
-Hugo Smith
-Beverley Witherington
-Bootcamp TAs & tutors
-Opensource code websites
-W3 schools
-Mozilla MDN
-Stackoverflow
-Medium
+1. Select one of the climate markers i.e CO2
+2. Type in a chosen year in the search box i.e 2010
+3. Assess the value for the selected year
+4. Your search history will be saved to compare with other selected years
+5. Compare data to other climate markers
 
-License
+##Credits
 
-The last section of a high-quality README file is the license. This lets other developers know what they can and cannot do with your project. If you need help choosing a license, refer to https://choosealicense.com/.
+https://global-warming.org  
+https://climate.nasa.gov  
+Caroline Helmore  
+Toby Carroll  
+Hugo Smith  
+Beverley Witherington  
+Bootcamp TAs & tutors  
+Opensource code websites  
+W3 schools  
+Mozilla MDN  
+Stackoverflow  
+Medium  
 
-Badges
+##License
+
+[![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://lbesson.mit-license.org/)
+
+##Badges
 
 ![JavaScript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
 
 ![Bulma](https://img.shields.io/badge/Bulma-00D1B2?style=for-the-badge&logo=Bulma&logoColor=white)
 
-Features
+##Features
 
-Access specific years in history to present day - to explore scientific data and understand climate changes across the following :
-CO2 Concentration
-Global Temperature
-Polar Ice
-Ocean Warming
-Links to key sites so to stay informed about global warming and initiatives:
-https://www.earthwatch.org.au/
-https://www.natureaustralia.org.au/
-https://www.greenfleet.com.au/
-https://climatenetwork.org/
-https://www.unep.org/news-and-stories/press-release/leading-international-organizations-commit-climate-action
-https://www.wwf.org.au/what-we-do/climate
-https://habitat.org.au/
-https://www.climatecouncil.org.au/
-https://foodtank.com/news/2020/10/36-organizations-helping-solve-the-climate-crisis/
-https://www.ipcc.ch/
-https://thalesetd.medium.com/organizations-fighting-climate-change-a-quick-guide-2e700d96dc52
-https://climateoutreach.org/
+Access specific years in history to present day - to explore scientific data and understand climate changes across the following :<br/>
+*CO2 Concentration  
+Global Temperature  
+Polar Ice  
+Ocean Warming  
+Links to key sites so to stay informed about global warming and initiatives:,  
+
+https://www.earthwatch.org.au/  
+https://www.natureaustralia.org.au/  
+https://www.greenfleet.com.au/  
+https://climatenetwork.org/  
+https://www.unep.org/news-and-stories/press-release/leading-international-organizations-commit-climate-action  
+https://www.wwf.org.au/what-we-do/climate  
+https://habitat.org.au/  
+https://www.climatecouncil.org.au/  
+https://foodtank.com/news/2020/10/36-organizations-helping-solve-the-climate-crisis/  
+https://www.ipcc.ch/  
+https://thalesetd.medium.com/organizations-fighting-climate-change-a-quick-guide-2e700d96dc52  
+https://climateoutreach.org/  
 https://cotap.org/
-How to Contribute
 
-If you created an application or package and would like other developers to contribute it, you can include guidelines for how to do so. The Contributor Covenant is an industry standard, but you can always write your own if you’d prefer.
 
-Tests
 
-Go the extra mile and write tests for your application. Then provide examples on how to run them here.
 

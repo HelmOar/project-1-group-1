@@ -75,7 +75,7 @@ tempSearchBtn.addEventListener('click', function () {
 
 
     var tempYearHistory = document.createElement("p");
-    tempYearHistory.textContent = `The global mean surface temperature was ${test.temp.land} °C for year ${userYear}`;
+    tempYearHistory.textContent = `The global mean surface temperature was ${test.temp.land} °C for year ${userYear}.`;
     tempHistoryEl.appendChild(tempYearHistory);
 
 })
@@ -119,7 +119,7 @@ oceanSearchBtn.addEventListener('click', function () {
 
 
     var oceanYearHistory = document.createElement("p");
-    oceanYearHistory.textContent = `The ocean surface temperature was ${ocean.temp} °C for year ${userYear}`;
+    oceanYearHistory.textContent = `The ocean surface temperature was ${ocean.temp} °C for year ${userYear}.`;
     oceanHistoryEl.appendChild(oceanYearHistory);
 
 })
@@ -163,7 +163,7 @@ articSearchBtn.addEventListener('click', function () {
 
 
     var arcticYearHistory = document.createElement("p");
-    arcticYearHistory.textContent = `The area of Arctic Ice was ${arctic.area} million square km for year ${userYear}`;
+    arcticYearHistory.textContent = `The area of Arctic Ice was ${arctic.area} million square km for year ${userYear}.`;
     arcticHistoryEl.appendChild(arcticYearHistory);
 
 });
@@ -209,8 +209,9 @@ co2SearchBtn.addEventListener('click', function () {
     localStorage.setItem("co2History", JSON.stringify(co2History));
 
     var co2YearHistory = document.createElement("p");
+    // co2YearHistory.classList.add(font-weight-bold);
     console.log(co2History)
-    co2YearHistory.textContent = `The fraction of Co2 in the atmosphere was ${co2.cycle}ppm for year ${userYearCo2}`;
+    co2YearHistory.textContent = `The fraction of Co2 in the atmosphere was ${co2.cycle}ppm for year ${userYearCo2}.`;
     co2HistoryEl.appendChild(co2YearHistory);
 
 });
