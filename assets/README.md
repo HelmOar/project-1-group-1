@@ -14,9 +14,7 @@ Importantly, we wanted to build an awareness of the immediacy of forging solutio
 
 We have developed a comprehensive web application, that incorporates API functionality to deliver to users, specific climate data: accessed across various time periods - that drivers scientific data about key climate markers, and that presents a comparative understanding of climate shifts across specific time points.
 
-Table of Contents (Optional)
 
-If your README is long, add a table of contents to make it easy for users to find what they need.
 
 Usage
 
@@ -32,7 +30,13 @@ To add a screenshot, create an assets/images folder in your repository and uploa
 
 Application directive
 
-TODO Provide a step-by-step description of how to use the app.
+1.Select one of the climate markers i.e CO2
+2.Type in a chosen year in the search box i.e 2010
+3.Assess the value for the selected year
+4.Your search history will be saved to compare with other selected years
+5.Compare data to other climate markers
+
+
 
 Credits
 
@@ -82,9 +86,5 @@ https://climateoutreach.org/
 https://cotap.org/
 How to Contribute
 
-If you created an application or package and would like other developers to contribute it, you can include guidelines for how to do so. The Contributor Covenant is an industry standard, but you can always write your own if you’d prefer.
 
-Tests
-
-Go the extra mile and write tests for your application. Then provide examples on how to run them here.
 
