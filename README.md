@@ -1,6 +1,6 @@
-###Global Warming Data History
+# Global Warming Data History
 
-##Description
+## Description
 
 This project was aimed at providing scientific data on markers of climate change. The project featured HTML, CSS, JavaScript and APIs.
 
@@ -15,7 +15,7 @@ Importantly, we wanted to build an awareness of the immediacy of forging solutio
 We have developed a comprehensive web application, that incorporates API functionality to deliver to users, specific climate data: accessed across various time periods - that drivers scientific data about key climate markers, and that presents a comparative understanding of climate shifts across specific time points.
 
 
-##Usage
+## Usage
 
 ![screenshot](/assets/images/Global%20Warming%20Data%20History.png)
 
@@ -31,7 +31,7 @@ https://helmoar.github.io/project-1-group-1/
 
 
 
-##Application directive
+## Application directive
 
 1. Select one of the climate markers i.e CO2
 2. Type in a chosen year in the search box i.e 2010
@@ -39,7 +39,7 @@ https://helmoar.github.io/project-1-group-1/
 4. Your search history will be saved to compare with other selected years
 5. Compare data to other climate markers
 
-##Credits
+## Credits
 
 https://global-warming.org  
 https://climate.nasa.gov  
@@ -54,17 +54,17 @@ Mozilla MDN
 Stackoverflow  
 Medium  
 
-##License
+## License
 
 [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://lbesson.mit-license.org/)
 
-##Badges
+## Badges
 
 ![JavaScript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
 
 ![Bulma](https://img.shields.io/badge/Bulma-00D1B2?style=for-the-badge&logo=Bulma&logoColor=white)
 
-##Features
+## Features
 
 Access specific years in history to present day - to explore scientific data and understand climate changes across the following :<br/>
 *CO2 Concentration  
