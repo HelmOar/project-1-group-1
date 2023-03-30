@@ -1,5 +1,5 @@
 .hero {
-    background: url(./assets/images/vanishing-ice.jpg) center / cover;
+    background: url(/assets/images/vanishing-ice.jpg) center / cover;
 }
 
 input::-webkit-outer-spin-button,
